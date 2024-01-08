@@ -1,0 +1,20 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.exponea">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application>
+        <meta-data android:name="ExponeaFlutterSDK" android:value="true" />
+        <meta-data android:name="ExponeaFlutterSDKVersion" android:value="1.4.2" />
+        <receiver
+            android:name=".ExponeaPushReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.exponea.sdk.action.PUSH_CLICKED" />
+                <action android:name="com.exponea.sdk.action.PUSH_DEEPLINK_CLICKED" />
+                <action android:name="com.exponea.sdk.action.PUSH_URL_CLICKED" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>
